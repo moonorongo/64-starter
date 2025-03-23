@@ -5,3 +5,4 @@
 ByteDump.txt
 .source.txt
 .vscode
+*.log

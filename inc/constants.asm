@@ -1,0 +1,47 @@
+#importonce 
+
+.const BASE_VIC = $d000
+.const BASE_VIC_BANK = $0 // $c000 // BASE memory for BANK 0
+
+
+// VIC REGISTERS
+.const SPRITE_0_POINTER = BASE_VIC_BANK + $07F8
+.const SPRITE_1_POINTER = BASE_VIC_BANK + $07F9
+.const SPRITE_2_POINTER = BASE_VIC_BANK + $07FA
+.const SPRITE_3_POINTER = BASE_VIC_BANK + $07FB
+.const SPRITE_4_POINTER = BASE_VIC_BANK + $07FC
+.const SPRITE_5_POINTER = BASE_VIC_BANK + $07FD
+.const SPRITE_6_POINTER = BASE_VIC_BANK + $07FE
+.const SPRITE_7_POINTER = BASE_VIC_BANK + $07FF
+
+.const SPRITE_0_X = BASE_VIC
+.const SPRITE_0_Y = BASE_VIC + 1
+
+.const SPRITE_1_X = BASE_VIC + 2
+.const SPRITE_1_Y = BASE_VIC + 3
+
+.const SPRITE_2_X = BASE_VIC + 4
+.const SPRITE_2_Y = BASE_VIC + 5
+
+.const SPRITE_3_X = BASE_VIC + 6
+.const SPRITE_3_Y = BASE_VIC + 7
+
+.const SPRITE_4_X = BASE_VIC + 8
+.const SPRITE_4_Y = BASE_VIC + 9
+
+.const SPRITE_5_X = BASE_VIC + 10
+.const SPRITE_5_Y = BASE_VIC + 11
+
+.const SPRITE_6_X = BASE_VIC + 12
+.const SPRITE_6_Y = BASE_VIC + 13
+
+.const SPRITE_7_X = BASE_VIC + 14
+.const SPRITE_7_Y = BASE_VIC + 15
+
+
+.const JOYSTICK_2 = $DC00
+.const JOYSTICK_1 = $DC01 
+
+
+.const RASTER_REGISTER_D012 = BASE_VIC + $12
+.const SCR_CONTROL_D012 = BASE_VIC + $11
