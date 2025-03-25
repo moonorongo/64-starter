@@ -1,12 +1,15 @@
-
+// Store registers A, X and Y on the stack
+// This is useful when we are going to modify them in an interrupt routine
+// 13 cycles
 .macro store_status_registers() {
-  pha
-  txa
-  pha
-  tya
-  pha
+  pha // 3
+  txa // 2
+  pha // 3
+  tya // 2
+  pha // 3
 }
 
+// 13 cycles
 .macro restore_status_registers() {
   pla
   tay
@@ -45,4 +48,21 @@
   sta $fffe        
   lda #>vector
   sta $ffff
+}
+
+.macro wait_cycles(cycles) {
+  .var cant_nop = floor(cycles / 2)
+  .var cant_nop_rest = mod(cycles, 2)
+
+  .if(cant_nop_rest == 1) {
+    inc dummy_zero_page //  5 cycles
+    .for(var i=2; i<cant_nop; i++) {
+      nop
+    }
+  } else  {
+    .for(var i=0; i<cant_nop; i++) {
+      nop
+    }
+  }
+    
 }
